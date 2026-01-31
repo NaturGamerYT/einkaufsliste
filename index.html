@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Einkaufsliste ✦ Modern</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <h1>Einkaufslisten</h1>
+        <button id="new-list-btn" title="Neue Liste">＋</button>
+      </header>
+      <div class="new-list-input" aria-hidden="true">
+        <input id="new-list-name" placeholder="Name der Liste (z. B. Supermarkt)" />
+        <button id="create-list">Erstellen</button>
+      </div>
+      <nav id="lists" class="lists" aria-label="Listen"></nav>
+      <footer class="sidebar-footer">Speichert lokal im Browser ✅</footer>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div class="title-area">
+          <input id="list-title" class="list-title" value="" aria-label="Listenname" />
+          <div class="title-actions">
+            <button id="rename-list" title="Liste umbenennen">✎</button>
+            <button id="delete-list" title="Liste löschen">🗑️</button>
+          </div>
+        </div>
+        <div class="main-actions">
+          <button id="clear-completed">Abgeschlossene löschen</button>
+          <button id="clear-all" class="danger">Alles löschen</button>
+        </div>
+      </header>
+
+      <section class="add-item">
+        <input id="new-item" placeholder="Artikel hinzufügen, Enter zum Speichern..." />
+        <button id="add-item-btn">+ Hinzufügen</button>
+      </section>
+
+      <section id="items" class="items">
+        <ul id="active-items" class="active-items" aria-label="Offene Artikel"></ul>
+        <div id="completed-section" class="completed-section" hidden>
+          <h3>Gekauft</h3>
+          <ul id="completed-items" class="completed-items" aria-label="Abgeschlossene Artikel"></ul>
+        </div>
+      </section>
+
+      <footer class="main-footer">Tipp: Du kannst mehrere Listen anlegen und zwischen ihnen wechseln ✅</footer>
+    </main>
+  </div>
+
+  <template id="list-item-template">
+    <li class="item">
+      <label class="check">
+        <input type="checkbox" class="item-checkbox" />
+        <span class="checkmark"></span>
+      </label>
+      <span class="item-text"></span>
+      <div class="item-actions">
+        <button class="edit-item" title="Bearbeiten">✎</button>
+        <button class="delete-item" title="Löschen">🗑️</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
